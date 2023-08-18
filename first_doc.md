@@ -13,11 +13,11 @@ keep-tex: true
 keep-md: true
 ---
 
-```{r}
-#| label: setup
-#| message: false
+::: cell
+``` {.r .cell-code}
 library(tidyverse)
 ```
+:::
 
 ## Quarto
 
@@ -29,48 +29,54 @@ To learn more about Quarto see <https://quarto.org>.
 When you click the **Render** button a document will be generated that includes both content and the output of embedded code.
 You can embed code like this:
 
-```{r}
+::: cell
+``` {.r .cell-code}
 1 + 1
 ```
 
+::: {.cell-output .cell-output-stdout}
+```         
+[1] 2
+```
+:::
+:::
+
 You can add options to executable code like this
 
-```{r}
-#| echo: false
-2 * 2
+::: cell
+::: {.cell-output .cell-output-stdout}
+```         
+[1] 4
 ```
+:::
+:::
 
 The `echo: false` option disables the printing of code (only output is displayed).
 
-```{r}
-#| echo: fenced
+::: {.cell .fig-cap-location-margin}
+```` cell-code
+```{{r}}
 #| label: fig-firstPlot
 #| fig-cap: 'Første plot.'
 #| fig-cap-location: margin
 plot(cars)
 ```
+````
+
+::: cell-output-display
+![Første plot.](first_doc_files/figure-pdf/fig-firstPlot-1.pdf){#fig-firstPlot fig-pos="H"}
+:::
+:::
 
 Mitt første plot er vist i @fig-firstPlot.
 
 Her er samme plot, men nå i ggplot versjon.
 
-```{r}
-#| echo: false
-#| message: false
-#| label: fig-andrePlot
-#| fig-cap: Samme data som ovenfor, men her i ggplot
-#|  versjon. Den røde linjen er fra en orinær lineær
-#|   regresjon, men den blå er en såkalt «smooth». 
-#|   For «smooth» versjonen er et 95% grått bånd 
-#|   for standarfeil tegnet inn.
-#| fig-cap-location: margin
-cars |> 
-  ggplot(mapping = aes(x = speed, y = dist)) +
-  geom_point() +
-  geom_smooth() +
-  geom_smooth(method = "lm", se = FALSE, colour = "red") + 
-  theme_linedraw()
-```
+::: {.cell .fig-cap-location-margin}
+::: cell-output-display
+![Samme data som ovenfor, men her i ggplot versjon. Den røde linjen er fra en orinær lineær regresjon, men den blå er en såkalt «smooth». For «smooth» versjonen er et 95% grått bånd for standarfeil tegnet inn.](first_doc_files/figure-pdf/fig-andrePlot-1.pdf){#fig-andrePlot}
+:::
+:::
 
 I @fig-andrePlot er de samme dataene gjengitt med hjelp av funksjoner fra R [@rcore2023] pakken ggplot2 [@wickham2016] som er en del av tidyverse [@wickham2019].
 
