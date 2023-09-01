@@ -40,3 +40,213 @@ plot(cars)
 ```
 
 Her kryssrefererer jeg til @fig-biler.
+
+## Calculator
+
+```{r}
+2+2
+```
+
+```{r}
+(2/15)^0.25*exp(4) - 200
+```
+
+## Variables
+
+```{r}
+2
+```
+
+Must give it a name (an address to location in memory) to be able to retrieve it.
+
+```{r}
+x <- 2
+```
+
+We can also write `x = 2`, but `<-` is the R way.
+We **assign** 2 to x.
+
+```{r}
+# get x
+x
+```
+
+## Variables cont.
+
+To both assign and print out result use parentheses.
+
+```{r}
+(y <- 5)
+```
+
+```{r}
+(z <- x + y)
+```
+
+## Variables cont.
+
+We can change an assignment.
+
+```{r}
+(x <- 13)
+```
+
+```{r}
+z
+```
+
+z retains value
+
+```{r}
+# update assignment
+(z <- x + y)
+```
+
+z gets new value
+
+## Integers, floating point (decimal), numeric
+
+```{r}
+typeof(z)
+```
+
+If we want z to be an integer we must do
+
+```{r}
+# Why L? I don't know.
+x <- 13L
+y <- 5L
+(z <- x + y)
+```
+
+```{r}
+typeof(z)
+```
+
+## Vectors
+
+R works on vectors.
+Even single digits, as above, are vectors of length 1.
+
+```{r}
+(x <- c(2, 8, 9, 21:29, 17:12))
+```
+
+```{r}
+(y <- 6:(5 + length(x)))
+```
+
+```{r}
+(z <- x + y)
+```
+
+What happend?
+
+## Vectors cont.
+
+```{r}
+(y <- 6:14) 
+```
+
+What will z now be?
+
+```{r}
+(z <- x + y)
+```
+
+```{r}
+(y <- 6:13) 
+```
+
+## Vectors cont.
+
+```{r}
+#| warning: true
+(z <- x + y)
+```
+
+-   If vectors not of same length R will replicate the shortest.
+-   If a multiple **NO WARNING!**
+    -   **DANGER!**
+-   Else the warning above
+
+## Change type
+
+```{r}
+typeof(z)
+```
+
+```{r}
+z <- as.integer(z)
+```
+
+```{r}
+typeof(z)
+```
+
+## Change type cont.
+
+```{r}
+z <- as.character(z)
+```
+
+```{r}
+typeof(z)
+```
+
+```{r}
+z
+```
+
+-   Now quotes around number, hence `character`.
+
+## Picking values in vector
+
+```{r}
+# first value
+z[1]
+```
+
+What will happen?
+Why?
+
+```{r}
+# commented out else document will not run
+#z[1] + z[2]
+```
+
+## Picking values in vector cont.
+
+Convert back to integer
+
+```{r}
+z <- as.integer(z)
+z[1] + z[2]
+```
+
+```{r}
+z
+```
+
+What will the next one return?
+
+```{r}
+#| eval: false
+z[1] + z[2:4]
+```
+
+## Picking values in vector cont.
+
+Quite flexible, we can for instance do:
+
+```{r}
+x[5] + z[c(1:2, c(9, 3, 1), 13:11)]
+```
+
+Note that the indexes must be put inside `c()`.
+
+```{r}
+c(1:2, c(9, 3, 1), 13:11)
+```
+
+## Picking values in vector cont.
