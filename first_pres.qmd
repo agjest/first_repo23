@@ -1,0 +1,150 @@
+---
+title: "first_pres"
+author: "Arnstein Gjestland"
+bibliography: [my_bib.bib, ds-h23.bib, my-DS-h23.bib]
+format:
+  revealjs:
+        theme: simple
+        reveal_options:
+        code-fold: true
+        incremental: true
+        smaller: true
+        scrollable: true
+  pptx: 
+    incremental: true
+    fig-asp: 0.7
+    fig-width: 12
+  beamer: 
+    incremental: true
+    aspectratio:  1610
+    navigation: horizontal
+    theme: Bergen
+language: nb.yaml
+CSL: apa-annotated-bibliography.csl
+---
+
+```{r}
+#| label: setup
+#| output: false
+#| message: false
+library(tidyverse)
+```
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished presentation.
+To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+@knuth1992d og @babri2020 @anas1998
+
+## Bullets
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code.
+You can embed code like this:
+
+```{r}
+1 + 1
+```
+
+## More code
+
+Referanse-info for pakker brukt.
+
+```{r}
+# Easier to understand with a pipe
+c("knitr", "rmarkdown", "tidyverse") |>  
+  # use the R citation function on the package list
+  map(citation) |>  
+  # convert the reference info to bibtex format by using the toBibtex
+  # function on each member of the reference list
+  map(toBibtex)  |> 
+  # print the list
+  map(print) |> 
+  # only want the list elements combined, not each list item
+  # in addition, hence max.level=0 
+  str(max.level = 0)
+```
+
+## More code
+
+Referanse info for selve R
+
+```{r}
+citation()
+```
+
+## Software brukt
+
+Vi har brukt R versjon 4.3.1 @r2023.
+I tillegg har vi benyttet Tidyverse pakkene [@wickham2019], knitr @xie2023 og rmarkdown @xie2018 i prosessen med å konvertere Quarto presentasjonen til ønsket output format.
+
+## Litteratur
+
+Litt name «dropping».
+
+@allaire2020 påstår bla bla (en «i tekst sitering»).
+Andre hevder imidlertid bla bla bla, @bechhofer2013, @broman2018, @young2008 og @ioannidis2005 .
+@dewald2020 mener imidlertid, med støtte i empiri, at bla synes å være det riktige.
+En ekstra @barnes2010.
+
+-   Noen ganger virker det å bare skrive «\@» andre ganger må en velge Citations... fra insert menyen.
+
+-   Merk bruk av «and» som ikke tar seg så godt ut.
+    Kommer tilbake til hvordan vi løser dette vha.
+    en norsk variant CSL style.
+
+## Plot
+
+```{r}
+#| label: fig-biler
+#| fig-cap: Plot av fart mot bremselengde.
+#| fig-cap-location: bottom
+plot(cars)
+```
+
+Som vi ser i @fig-biler bla bla.
+
+## Hvordan får vi referanser før appendiks?
+
+Insert en Div... og gi den id-en refs.
+Da blir referansene plassert der div-en er .
+
+![Div med id refs.](div_attributes.png){fig-align="center" width="284"}
+
+## Referanser
+
+::: {#refs}
+:::
+
+## Nytt appendiks
+
+Versjon brukt
+
+```         
+R version 4.3.1 (2023-06-16)
+Platform: aarch64-apple-darwin20 (64-bit)
+Running under: macOS Ventura 13.2.1
+
+Matrix products: default
+BLAS:   /System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/libBLAS.dylib 
+LAPACK: /Library/Frameworks/R.framework/Versions/4.3-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.11.0
+
+locale:
+[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+
+time zone: Europe/Oslo
+tzcode source: internal
+
+attached base packages:
+[1] stats     graphics  grDevices utils     datasets  methods   base     
+
+loaded via a namespace (and not attached):
+[1] compiler_4.3.1   rsconnect_0.8.29 tools_4.3.1      rstudioapi_0.14 
+```

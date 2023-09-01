@@ -1,14 +1,17 @@
 ---
 title: "Mitt første Quarto dokument"
 author: "Arnstein Gjestland"
-format: pdf
+format: 
+  pdf: default
+  html: default
+  docx: default
 editor: visual
 crossref:
   fig-title: Figur
   tbl-title: Tabell
   fig-prefix: figur
   tbl-prefix: tabell
-bibliography: my_bib.bib
+bibliography: [my_bib.bib, ds-h23.bib]
 keep-tex: true
 keep-md: true
 ---
@@ -51,6 +54,7 @@ plot(cars)
 ```
 
 Mitt første plot er vist i @fig-firstPlot.
+@fig-andrePlot
 
 Her er samme plot, men nå i ggplot versjon.
 
@@ -73,5 +77,7 @@ cars |>
 ```
 
 I @fig-andrePlot er de samme dataene gjengitt med hjelp av funksjoner fra R [@rcore2023] pakken ggplot2 [@wickham2016] som er en del av tidyverse [@wickham2019].
+
+## Litt klassisk R
 
 ## Referanser
