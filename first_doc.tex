@@ -223,7 +223,7 @@
 
 \begin{document}
 \maketitle
-\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[boxrule=0pt, frame hidden, breakable, enhanced, interior hidden, borderline west={3pt}{0pt}{shadecolor}, sharp corners]}{\end{tcolorbox}}\fi
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, frame hidden, sharp corners, breakable, enhanced, interior hidden]}{\end{tcolorbox}}\fi
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -286,6 +286,7 @@ output is displayed).
 \end{figure}
 
 Mitt første plot er vist i figur~\ref{fig-firstPlot}.
+figur~\ref{fig-andrePlot}
 
 Her er samme plot, men nå i ggplot versjon.
 
@@ -303,8 +304,11 @@ bånd for standarfeil tegnet inn.}
 \end{figure}
 
 I figur~\ref{fig-andrePlot} er de samme dataene gjengitt med hjelp av
-funksjoner fra R (R Core Team 2023) pakken ggplot2 (Wickham 2016) som er
-en del av tidyverse (Wickham et al. 2019).
+funksjoner fra R (R Core Team 2023) pakken ggplot2 (Wickham and
+Grolemund 2016) som er en del av tidyverse (Wickham et al. 2019).
+
+\hypertarget{litt-klassisk-r}{%
+\subsection{Litt klassisk R}\label{litt-klassisk-r}}
 
 \hypertarget{referanser}{%
 \subsection*{Referanser}\label{referanser}}
@@ -317,16 +321,15 @@ R Core Team. 2023. \emph{R: A Language and Environment for Statistical
 Computing}. Vienna, Austria: R Foundation for Statistical Computing.
 \url{https://www.R-project.org/}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-wickham2016}{}}%
-Wickham, Hadley. 2016. \emph{Ggplot2: Elegant Graphics for Data
-Analysis}. Springer-Verlag New York.
-\url{https://ggplot2.tidyverse.org}.
-
 \leavevmode\vadjust pre{\hypertarget{ref-wickham2019}{}}%
 Wickham, Hadley, Mara Averick, Jennifer Bryan, Winston Chang, Lucy
 D'Agostino McGowan, Romain François, Garrett Grolemund, et al. 2019.
 {``Welcome to the {tidyverse}.''} \emph{Journal of Open Source Software}
 4 (43): 1686. \url{https://doi.org/10.21105/joss.01686}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-wickham2016}{}}%
+Wickham, Hadley, and Garrett Grolemund. 2016. \emph{R for Data Science:
+Import, Tidy, Transform, Visualize, and Model Data}. Beijing: O'Reilly.
 
 \end{CSLReferences}
 

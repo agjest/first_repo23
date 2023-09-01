@@ -69,6 +69,7 @@ plot(cars)
 :::
 
 Mitt første plot er vist i @fig-firstPlot.
+@fig-andrePlot
 
 Her er samme plot, men nå i ggplot versjon.
 
@@ -79,5 +80,7 @@ Her er samme plot, men nå i ggplot versjon.
 :::
 
 I @fig-andrePlot er de samme dataene gjengitt med hjelp av funksjoner fra R [@rcore2023] pakken ggplot2 [@wickham2016] som er en del av tidyverse [@wickham2019].
+
+## Litt klassisk R
 
 ## Referanser
